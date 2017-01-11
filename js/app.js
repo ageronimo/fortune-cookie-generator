@@ -9,28 +9,18 @@ function generateFortuneCookie() {
   var fortune = document.createTextNode(fortunesList); //creates a text node 
   li.appendChild(fortune); //appends text to li (makes li -> text), fortune becomes child
   document.getElementById("fortune-cookie-text").appendChild(li); //attaches node to list
-
+  document.getElementById("list").appendChild(li);
+  
   //showing the actual fortune
-  var li = fortunesList[Math.floor(Math.random()*fortunesList.length)];
-  document.getElementById("fortune-cookie-text").innerHTML = li;
+  var fortune = fortunesList[Math.floor(Math.random()*fortunesList.length)];
+  document.getElementById("fortune-cookie-text").innerText = fortune;
 
-  //show all fortunes in previous-fortunes
-  // document.getElementById("previous-fortunes").innerHTML = li;
+  //target single fortunes
+  var targetFortune = document.getElementById("list").getElementsByTagName("li");
+  if (fortune == fortunesList[0]){
+    targetFortune = fortune;
+  } else if (fortune == fortunesList[1]){
+    targetFortune = fortune;
+  }
+  console.log(targetFortune);
 }
-
-  // for (i = 0; i < fortunesList.length; i++) {
-  //   document.getElementById("fortune-cookie-text").innerHTML = fortunesList[i];
-  //   console.log(fortunesList[i]);
-  // }
-
-  // var box = document.getElementById('fortune-cookie-text');
-  //  -  var list = document.getElementById('list');
-  //  -  var li = document.createElement("li");
-  //  -  box.innerHTML = fortunesList[Math.floor(Math.random()*fortunesList.length)];
-  //  -  li.appendChild(document.createTextNode(box.textContent));
-  //  -  list.appendChild(li);
-
-  // var node = document.createElement("LI");
-  // var textnode = document.createTextNode("Water");
-  // node.appendChild(textnode);
-  // document.getElementById("myList").appendChild(node);
