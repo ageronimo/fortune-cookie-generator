@@ -4,33 +4,18 @@ var fortunesList = ["You will have a great day.", "Someone will say 'hi' to you.
 var i;
 
 function generateFortuneCookie() {
-  //use appendChild() method to make an list
-  var li = document.createElement("li"); //creates an li node 
-  var fortune = document.createTextNode(fortunesList); //creates a text node 
-  li.appendChild(fortune); //appends text to li (makes li -> text), fortune becomes child
-  document.getElementById("fortune-cookie-text").appendChild(li); //attaches node to list
+  /* original code
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(fortunesList);
+  node.appendChild(textnode);
+  node.getElementById("fortune-cookie-text").appendChild(node);*/
+  
+  var fortune = document.getElementById(fortune-cookie-text);
+  var list = document.getElementById("list");
+  var li = document.createElement("li");
 
-  //showing the actual fortune
-  var li = fortunesList[Math.floor(Math.random()*fortunesList.length)];
-  document.getElementById("fortune-cookie-text").innerHTML = li;
+  fortune.innerHTML = fortunesList[Math.floor(Math.random()*fortunesList.length)];;
 
-  //show all fortunes in previous-fortunes
-  document.getElementById("previous-fortunes").innerHTML = li;
+  li.appendChild(document.createTextNode(fortune.textContent));
+  list.appendChild(li);
 }
-
-  // for (i = 0; i < fortunesList.length; i++) {
-  //   document.getElementById("fortune-cookie-text").innerHTML = fortunesList[i];
-  //   console.log(fortunesList[i]);
-  // }
-
-  // var box = document.getElementById('fortune-cookie-text');
-  //  -  var list = document.getElementById('list');
-  //  -  var li = document.createElement("li");
-  //  -  box.innerHTML = fortunesList[Math.floor(Math.random()*fortunesList.length)];
-  //  -  li.appendChild(document.createTextNode(box.textContent));
-  //  -  list.appendChild(li);
-
-  // var node = document.createElement("LI");
-  // var textnode = document.createTextNode("Water");
-  // node.appendChild(textnode);
-  // document.getElementById("myList").appendChild(node);
