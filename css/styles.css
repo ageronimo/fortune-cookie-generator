@@ -1,0 +1,20 @@
+.styleMe {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 30px;
+  width: 100%;
+}
+
+button {
+  padding: 10px 10px;
+  background-color: white;
+  border: 2px solid black;
+
+}
+
+.container {
+  margin: 0 auto;
+}
